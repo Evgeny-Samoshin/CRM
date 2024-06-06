@@ -1,0 +1,14 @@
+<svg width="20.000000" height="20.000000" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<clipPath id="clip10_170">
+			<rect id="ant-design:delete-outlined" width="20.000000" height="20.000000" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<rect id="ant-design:delete-outlined" width="20.000000" height="20.000000" fill="#FFFFFF" fill-opacity="0"/>
+	<g clip-path="url(#clip10_170)">
+		<path id="Vector" d="M7.03 3.59L6.87 3.59C6.96 3.59 7.03 3.52 7.03 3.43L7.03 3.59L12.96 3.59L12.96 3.43C12.96 3.52 13.03 3.59 13.12 3.59L12.96 3.59L12.96 5L14.37 5L14.37 3.43C14.37 2.74 13.81 2.18 13.12 2.18L6.87 2.18C6.18 2.18 5.62 2.74 5.62 3.43L5.62 5L7.03 5L7.03 3.59ZM16.87 5L3.12 5C2.77 5 2.5 5.27 2.5 5.62L2.5 6.25C2.5 6.33 2.57 6.4 2.65 6.4L3.83 6.4L4.31 16.62C4.34 17.28 4.9 17.81 5.56 17.81L14.43 17.81C15.1 17.81 15.65 17.28 15.68 16.62L16.16 6.4L17.34 6.4C17.42 6.4 17.5 6.33 17.5 6.25L17.5 5.62C17.5 5.27 17.22 5 16.87 5ZM14.28 16.4L5.71 16.4L5.24 6.4L14.75 6.4L14.28 16.4Z" fill="#6E6893" fill-opacity="1.000000" fill-rule="nonzero"/>
+	</g>
+</svg>

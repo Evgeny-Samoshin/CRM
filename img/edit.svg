@@ -1,0 +1,15 @@
+<svg width="20.000000" height="20.000000" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<clipPath id="clip10_198">
+			<rect id="akar-icons:edit" width="20.000000" height="20.000000" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<rect id="akar-icons:edit" width="20.000000" height="20.000000" fill="#FFFFFF" fill-opacity="0"/>
+	<g clip-path="url(#clip10_198)">
+		<path id="Vector" d="M17.63 6.93L15.56 4.86L17.63 6.93ZM11.28 8.64C10.99 8.93 10.79 9.3 10.71 9.7L10.19 12.3L12.79 11.78C13.19 11.7 13.56 11.5 13.85 11.21L19.46 5.6C19.63 5.43 19.77 5.23 19.86 5.01C19.95 4.79 20 4.55 20 4.31C20 4.07 19.95 3.84 19.86 3.62C19.77 3.4 19.63 3.2 19.46 3.03C19.29 2.86 19.09 2.72 18.87 2.63C18.65 2.54 18.42 2.5 18.18 2.5C17.94 2.5 17.7 2.54 17.48 2.63C17.26 2.72 17.06 2.86 16.89 3.03L11.28 8.64Z" stroke="#6E6893" stroke-opacity="1.000000" stroke-width="2.000000" stroke-linejoin="round"/>
+		<path id="Vector" d="M18.03 14.26L18.03 17.2C18.03 17.72 17.83 18.22 17.46 18.59C17.09 18.96 16.59 19.16 16.07 19.16L5.29 19.16C4.77 19.16 4.27 18.96 3.9 18.59C3.53 18.22 3.33 17.72 3.33 17.2L3.33 6.42C3.33 5.9 3.53 5.4 3.9 5.03C4.27 4.66 4.77 4.46 5.29 4.46L8.23 4.46" stroke="#6E6893" stroke-opacity="1.000000" stroke-width="2.000000" stroke-linejoin="round" stroke-linecap="round"/>
+	</g>
+</svg>

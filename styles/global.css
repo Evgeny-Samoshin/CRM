@@ -1,0 +1,158 @@
+@font-face {
+  font-family: "Inter";
+  src: local("Inter");
+  src: url(../font/Inter-Regular.woff2);
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: local("Inter");
+  src: url(../font/Inter-SemiBold.woff2);
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: local("Inter");
+  src: url(../font/Inter-Bold.woff2);
+  font-weight: 700;
+  font-display: swap;
+}
+
+html {
+  position: relative;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  color: var(--color-textPrimary);
+  background-color: var(--color-backgroundSecondary);
+}
+
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+svg {
+  max-height: 100%;
+}
+
+
+button {
+  padding: 0;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+iframe,
+input {
+  border: none;
+}
+
+address, cite {
+  font-style: normal;
+}
+
+/*
+Доступно скрываю элементы
+*/
+
+.visually-hidden {
+  position: fixed;
+  transform: scale(0);
+}
+
+
+/*
+Пример контейнера
+
+Если контейнер 1180px по макету,
+то для max-width прибавляем паддинги 30px*2, 
+в итоге 1240px
+Чтобы контент не прижимался к краям экрана
+*/
+
+.container {
+  --gap: 15px;
+  max-width: 1260px;
+  padding: 0 var(--gap);
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+}
+
+.row_justify_between {
+  justify-content: space-between;
+}
+
+.section {
+  --gap: 30px;
+  padding: var(--gap) 0;
+}
+
+.hidden {
+  display: none;
+}
+
+
+
+.h1,
+.h2 {
+  font-size: 2rem;
+  line-height: 2.3rem;
+  text-align: center;
+}
+
+@media (min-width: 426px) {
+  .container {
+    --gap: 30px;
+  }
+
+  .section {
+    --gap: 70px;
+  }
+}
