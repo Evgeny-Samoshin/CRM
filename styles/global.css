@@ -134,12 +134,6 @@ address, cite {
   padding: var(--gap) 0;
 }
 
-.hidden {
-  display: none;
-}
-
-
-
 .h1,
 .h2 {
   font-size: 2rem;
