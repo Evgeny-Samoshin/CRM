@@ -7,8 +7,13 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .overlay {
-  height: 100vh;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
   background-color: rgba(0, 0, 0, 0.2);
+  justify-content: center;
+  align-items: center;
 }
 
 .modal {
@@ -270,7 +275,7 @@ input[type="number"]::-webkit-outer-spin-button {
   .total-cost__text {
     font-size: 12px;
   }
-  
+
   .total-cost__sum {
     font-size: 16px;
   }
