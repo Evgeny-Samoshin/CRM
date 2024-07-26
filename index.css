@@ -1,5 +1,5 @@
 @import url(styles/normalize.css);
 @import url(styles/global.css);
 
-@import url(table.css);
-@import url(modal.css);
+@import url(styles/table.css);
+@import url(styles/modal.css);
