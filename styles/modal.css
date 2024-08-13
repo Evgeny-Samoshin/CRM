@@ -9,12 +9,13 @@ input[type="number"]::-webkit-outer-spin-button {
 .overlay {
   display: flex;
   position: absolute;
+  padding-top: 60px;
   top: 0;
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   justify-content: center;
-  align-items: center;
+  align-items: start;
 }
 
 .hidden {
@@ -23,8 +24,6 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .modal {
   position: relative;
-  max-width: 792px;
-  min-height: 823px;
   padding: 30px;
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.25);
   background: #f2f0f9;
