@@ -7,14 +7,8 @@ btnShowModal.addEventListener('click', () => {
   overlay.classList.remove('hidden');
 });
 
-modal.addEventListener('click', e => {
-  e.stopPropagation();
-});
-
-overlay.addEventListener('click', () => {
-  overlay.classList.add('hidden');
-});
-
-btnCloseModal.addEventListener('click', () => {
-  overlay.classList.add('hidden');
+overlay.addEventListener('click', e => {
+  if (e.target === overlay || e.target === btnCloseModal) {
+    overlay.classList.add('hidden');
+  };
 });

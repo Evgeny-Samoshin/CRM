@@ -60,17 +60,19 @@ const goodsStore = [
 const createRow = obj => {
   const templateRow = `
   <tr>
-    <td class="tbody__cell tbody__cell_black">${obj.id}</td>
+    <td class="tbody__cell tbody__cell_black js-id">${obj.id}</td>
     <td class="tbody__cell tbody__cell_black">${obj.title}</td>
     <td class="tbody__cell tbody__cell_black">${obj.description}</td>
     <td class="tbody__cell tbody__cell_black">${obj.units}</td>
     <td class="tbody__cell tbody__cell_black">${obj.count}</td>
     <td class="tbody__cell tbody__cell_primary">$${obj.price}</td>
     <td class="tbody__cell tbody__cell_black">$${obj.price * obj.count}</td>
-    <td class="tbody__cell btn-container">
-      <button class="btn-container__btn btn-container__btn_no_picture"></button>
-      <button class="btn-container__btn btn-container__btn_edit"></button>
-      <button class="btn-container__btn btn-container__btn_delete"></button>
+    <td class="tbody__cell">
+      <div class="btn-container">
+        <button class="btn-container__btn btn-container__btn_no_picture"></button>
+        <button class="btn-container__btn btn-container__btn_edit"></button>
+        <button class="btn-container__btn btn-container__btn_delete"></button>
+      </div>
     </td>
   </tr>`;
 
@@ -86,3 +88,26 @@ const renderGoods = arr => {
 };
 
 renderGoods(goodsStore);
+
+const deleteGoods = (goods) => {
+  goods.remove();
+
+  const goodsId = +goods.querySelector('.js-id').textContent;
+
+  goodsStore.forEach((item, itemIndx, arr) => {
+    if (item.id === goodsId) {
+      arr.splice(itemIndx, 1);
+    };
+  });
+
+  console.log(goodsStore);
+};
+
+const btnContainer = document.querySelectorAll('.btn-container');
+btnContainer.forEach(item => {
+  item.addEventListener('click', e => {
+    if (e.target.classList.contains('btn-container__btn_delete')) {
+      deleteGoods(e.target.closest('tr'));
+    };
+  });
+});
