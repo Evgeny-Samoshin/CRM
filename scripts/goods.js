@@ -57,6 +57,12 @@ const goodsStore = [
   }
 ];
 
+const form = document.querySelector('.form');
+const dicountCheckbox = document.querySelector('#discount');
+const discountInput = document.querySelector('#discont');
+const tableSumField = document.querySelector('.table-sum');
+const modalSumField = document.querySelector('.modal-sum');
+
 const createRow = obj => {
   const templateRow = `
   <tr>
@@ -66,7 +72,7 @@ const createRow = obj => {
     <td class="tbody__cell tbody__cell_black">${obj.units}</td>
     <td class="tbody__cell tbody__cell_black">${obj.count}</td>
     <td class="tbody__cell tbody__cell_primary">$${obj.price}</td>
-    <td class="tbody__cell tbody__cell_black">$${obj.price * obj.count}</td>
+    <td class="tbody__cell tbody__cell_black">$${obj.totalPrice}</td>
     <td class="tbody__cell">
       <div class="btn-container">
         <button class="btn-container__btn btn-container__btn_no_picture"></button>
@@ -79,20 +85,45 @@ const createRow = obj => {
   return templateRow;
 };
 
-const renderGoods = arr => {
-  const tableBody = document.querySelector('.tbody');
-
-  arr.map(item => {
-    tableBody.insertAdjacentHTML('beforeend', createRow(item));
-  });
+const calcSum = (item) => {
+  const count = item.count.localName === 'input' ? item.count.value : item.count;
+  const price = item.price.localName === 'input' ? item.price.value : item.price;
+  const discont = item.discont.localName === 'input' ? item.discont.value : item.discont;
+  
+  let sum = 0;
+  if (discont === "0" || !discont) {
+    sum = count * price;
+  } else {
+    sum = count * price - 
+    (count * price * (discont / 100));
+  };
+  
+  return sum;
 };
 
-renderGoods(goodsStore);
+const calcItemSum = item => {
+  item.totalPrice = calcSum(item);
+};
 
-const deleteGoods = (goods) => {
-  goods.remove();
+const calcTableSum = (data) => {
+  const sum = data.reduce((sum, item) => sum + calcSum(item), 0);
 
-  const goodsId = +goods.querySelector('.js-id').textContent;
+  tableSumField.textContent = `$ ${sum}`;
+
+  return sum;
+};
+
+const calcModalSum = (form) => {
+  const sum = calcSum(form);
+  modalSumField.textContent = `$ ${sum}`;
+
+  return sum;
+};
+
+const deleteItem = (item) => {
+  item.remove();
+
+  const goodsId = +item.querySelector('.js-id').textContent;
 
   goodsStore.forEach((item, itemIndx, arr) => {
     if (item.id === goodsId) {
@@ -100,14 +131,84 @@ const deleteGoods = (goods) => {
     };
   });
 
-  console.log(goodsStore);
+  calcTableSum(goodsStore);
 };
 
-const btnContainer = document.querySelectorAll('.btn-container');
-btnContainer.forEach(item => {
-  item.addEventListener('click', e => {
-    if (e.target.classList.contains('btn-container__btn_delete')) {
-      deleteGoods(e.target.closest('tr'));
+const btnControl = (btnContainers) => {
+  btnContainers.forEach(item => {
+    item.addEventListener('click', e => {
+      if (e.target.classList.contains('btn-container__btn_delete')) {
+        deleteItem(e.target.closest('tr'));
+      };
+    });
+  });
+};
+
+const renderGoods = data => {
+  const tableBody = document.querySelector('.tbody');
+  tableBody.innerHTML = '';
+
+  data.map(item => {
+    calcItemSum(item);
+    tableBody.insertAdjacentHTML('beforeend', createRow(item));
+  });
+
+  const btnContainers = tableBody.querySelectorAll('.btn-container');
+  btnControl(btnContainers);
+  calcTableSum(data);
+};
+
+renderGoods(goodsStore);
+
+// Discount control
+
+
+const discountControl = (form) => {
+  form.addEventListener('click', e => {
+    if (e.target === dicountCheckbox && !dicountCheckbox.checked) {      
+      discountInput.disabled = true;
+      discountInput.required = false;
+      discountInput.value = '';
+    };
+    if (e.target === dicountCheckbox && dicountCheckbox.checked) {      
+      discountInput.disabled = false;
+      discountInput.required = true;
     };
   });
-});
+};
+
+const addGoodsStore = (store, data) => {
+  store.push(data);
+};
+
+
+
+const formControl = form => {
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+
+    const newGoods = Object.fromEntries(formData);
+
+    newGoods.id = Math.floor(Math.random() * 100000000 + 1);
+    newGoods.totalPrice = calcModalSum(form);
+    
+    addGoodsStore(goodsStore, newGoods);
+    form.reset();
+    form.discont.disabled = true;
+    modalSumField.textContent = `$ 0.00`;
+    renderGoods(goodsStore);
+  });
+
+  form.addEventListener('change', e => {
+    if (e.target === form.count ||
+        e.target === form.price ||
+        e.target === form.discont) {
+          calcModalSum(form);
+        };
+  });
+};
+
+discountControl(form);
+formControl(form);

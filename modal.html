@@ -24,7 +24,7 @@
 
         <div class="total-cost">
           <span class="total-cost__text">Итоговая стоимость:</span>
-          <span class="total-cost__sum">$ 900.00</span>
+          <span class="total-cost__sum table-sum">$ 0.00</span>
         </div>
       </div>
 
@@ -106,23 +106,23 @@
           <fieldset class="fieldset">
             <div class="form__item form__item_name">
               <label class="form__item-label" for="name">Наименование</label>
-              <input class="form__item-input" type="text" name="name" id="name">
+              <input class="form__item-input" type="text" name="title" id="title" required>
             </div>
 
             <div class="form__item form__item_category">
               <label class="form__item-label" for="category">Категория</label>
-              <input class="form__item-input" type="text" name="category" id="category">
+              <input class="form__item-input" type="text" name="category" id="category" required>
             </div>
 
             <div class="form__item form__item_description">
               <label class="form__item-label" for="description">Описание</label>
               <textarea class="form__item-input form__item-textarea" name="description" id="description" cols="30"
-                rows="10"></textarea>
+                rows="10" required></textarea>
             </div>
 
             <div class="form__item form__item_units">
               <label class="form__item-label" for="units">Единицы измерения</label>
-              <input class="form__item-input" type="text" name="units" id="units">
+              <input class="form__item-input" type="text" name="units" id="units" required>
             </div>
 
             <div class="form__item form__item_discount">
@@ -132,18 +132,18 @@
                 <label class="form__label checkbox" for="discount">
                   <input class="checkbox__input" type="checkbox" name="discount" id="discount">
                 </label>
-                <input class="form__item-input" type="text" name="discountValue" id="discountValue">
+                <input class="form__item-input" type="number" name="discont" id="discont" disabled>
               </div>
             </div>
 
             <div class="form__item form__item_quantity">
               <label class="form__item-label" for="quantity">Количество</label>
-              <input class="form__item-input" type="number" name="quantity" id="quantity">
+              <input class="form__item-input" type="number" name="count" id="count" required>
             </div>
 
             <div class="form__item form__item_price">
               <label class="form__item-label" for="price">Цена</label>
-              <input class="form__item-input" type="number" name="price" id="price">
+              <input class="form__item-input" type="number" name="price" id="price" required>
             </div>
 
             <div class="form__item form__item_error">
@@ -162,7 +162,7 @@
           <div class="modal__footer">
             <div class="total-cost">
               <span class="total-cost__text">Итоговая стоимость:</span>
-              <span class="total-cost__sum">$ 900.00</span>
+              <span class="total-cost__sum modal-sum">$ 0.00</span>
             </div>
 
             <button class="form__btn" type="submit">Добавить товар</button>
