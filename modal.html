@@ -11,9 +11,9 @@
   <link rel="preload" href="font/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin>
 
   <link rel="stylesheet" href="index.css">
-  <!-- <script defer src="main.js"></script> -->
-  <script defer src="scripts/goods.js"></script>
-  <script defer src="scripts/modal.js"></script>
+  <script type="module" src="main.js"></script>
+  <!-- <script defer src="scripts/goods.js"></script>
+  <script defer src="scripts/modal.js"></script> -->
 </head>
 
 <body>
@@ -105,7 +105,7 @@
         <form action="https://jsonplaceholder.typicode.com/posts" method="post" class="form">
           <fieldset class="fieldset">
             <div class="form__item form__item_name">
-              <label class="form__item-label" for="name">Наименование</label>
+              <label class="form__item-label" for="title">Наименование</label>
               <input class="form__item-input" type="text" name="title" id="title" required>
             </div>
 
@@ -126,7 +126,7 @@
             </div>
 
             <div class="form__item form__item_discount">
-              <label class="form__item-label" for="discountValue">Дисконт</label>
+              <label class="form__item-label" for="discont">Дисконт</label>
 
               <div class="row">
                 <label class="form__label checkbox" for="discount">
@@ -137,7 +137,7 @@
             </div>
 
             <div class="form__item form__item_quantity">
-              <label class="form__item-label" for="quantity">Количество</label>
+              <label class="form__item-label" for="count">Количество</label>
               <input class="form__item-input" type="number" name="count" id="count" required>
             </div>
 

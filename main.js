@@ -1,16 +1,26 @@
-const productName = "Cisco Catalist 3750r";
-const productQuantity = 1;
-const productCategory = "Network equipment";
-const productPrice = 4000;
+import { goodsStore } from "./scripts/goods.js";
 
-console.log("Product Name: " + productName);
+import {
+  tableBody,
+  form,
+  btnShowModal,
+  btnCloseModal,
+  overlay
+} from './scripts/modules/elements.js';
 
-console.log("Total coast: " + productQuantity * productPrice + "$");
+import { renderGoods } from "./scripts/modules/render.js";
+import { modalControl, discountControl, formControl } from "./scripts/modules/controls.js";
 
-const modalTitle = document.querySelector('.modal__title');
-const closeBtn = document.querySelector('.modal__close-btn');
-const productId = document.querySelector('.product-id');
-const modalForm = document.querySelector('.form');
-const discountCheckbox = document.querySelector('#discount');
-const discountValue = document.querySelector('#discountValue');
-const totalCoast = document.querySelector('.total-cost__sum');
+{
+  const init = () => {
+    renderGoods(tableBody, goodsStore);
+    discountControl(form);
+    formControl(form);
+    modalControl(btnShowModal, btnCloseModal, overlay);
+  };
+
+  document.addEventListener('DOMContentLoaded', () => {
+    init();
+  });
+};
+

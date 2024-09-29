@@ -1,4 +1,4 @@
-const goodsStore = [
+export const goodsStore = [
   {
     "id": 253842678,
     "title": "Смартфон Xiaomi 11T 8/128GB",
@@ -158,10 +158,7 @@ const renderGoods = data => {
   calcTableSum(data);
 };
 
-renderGoods(goodsStore);
-
 // Discount control
-
 
 const discountControl = (form) => {
   form.addEventListener('click', e => {
@@ -180,8 +177,6 @@ const discountControl = (form) => {
 const addGoodsStore = (store, data) => {
   store.push(data);
 };
-
-
 
 const formControl = form => {
   form.addEventListener('submit', e => {
@@ -210,5 +205,6 @@ const formControl = form => {
   });
 };
 
+renderGoods(goodsStore);
 discountControl(form);
 formControl(form);
