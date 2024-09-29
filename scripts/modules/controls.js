@@ -4,6 +4,7 @@ import { calcTableSum } from "./calculate.js";
 import { tableBody, modalSumField } from './elements.js';
 
 import { calcModalSum } from "./calculate.js";
+import { addGoodsStore } from './serviceData.js';
 import { renderGoods } from './render.js';
 
 export const modalControl = (btnShowModal, btnCloseModal, overlay) => {
@@ -67,6 +68,7 @@ export const formControl = form => {
 
     newGoods.id = Math.floor(Math.random() * 100000000 + 1);
 
+    addGoodsStore(goodsStore, newGoods);
     form.reset();
     form.discont.disabled = true;
     modalSumField.textContent = `$ 0.00`;
