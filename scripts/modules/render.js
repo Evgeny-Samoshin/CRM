@@ -13,7 +13,7 @@ const createRow = obj => {
     <td class="tbody__cell tbody__cell_black">$${obj.totalPrice}</td>
     <td class="tbody__cell">
       <div class="btn-container">
-        <button class="btn-container__btn btn-container__btn_no_picture"></button>
+        <button class="btn-container__btn btn-container__btn_no_picture" data-pic="${obj.images.small}"></button>
         <button class="btn-container__btn btn-container__btn_edit"></button>
         <button class="btn-container__btn btn-container__btn_delete"></button>
       </div>

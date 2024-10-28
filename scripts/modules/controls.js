@@ -40,6 +40,15 @@ export const btnControl = (btnContainers) => {
       if (e.target.classList.contains('btn-container__btn_delete')) {
         deleteItem(e.target.closest('tr'));
       };
+      if (e.target.dataset.pic) {
+        const url = e.target.dataset.pic;
+        const posX = screen.width/2 - 300;
+        const posY = screen.height/2 - 300;
+        const newWindow = open('about:blank', '', `width=600,height=600,top=${posY},left=${posX}`);
+        newWindow.document.body.innerHTML = `
+        <img src="${url}" alt="goods img">
+        `
+      }
     });
   });
 };
@@ -67,6 +76,9 @@ export const formControl = form => {
     const newGoods = Object.fromEntries(formData);
 
     newGoods.id = Math.floor(Math.random() * 100000000 + 1);
+    newGoods.images = {};
+    newGoods.images.small = '../../img/600.jpg';
+    newGoods.images.big = '../../img/600.jpg';
 
     addGoodsStore(goodsStore, newGoods);
     form.reset();
